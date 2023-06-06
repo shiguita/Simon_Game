@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: hsl(0, 0%, 23%);
+}
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 48px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 0 2px 0 black, #fc0 0 0 10px;
+}
+
+.scoreboard {
+  width: 750px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
