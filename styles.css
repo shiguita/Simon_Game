@@ -6,21 +6,90 @@
 
 body {
   font-family: "Press Start 2P", cursive;
-  background-color: hsl(0, 0%, 23%);
+  background-color: dimgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  color: hsl(0, 0%, 100%);
+  color: white;
   font-size: 48px;
   margin-top: 50px;
   margin-bottom: 10px;
-  text-align: center;
-  text-shadow: 0 2px 0 black, #fc0 0 0 10px;
+  text-shadow: 0 2px 0 black, gold 0 0 10px;
+}
+
+h2 {
+  color: white;
+  margin: 20px 0;
+  text-shadow: 0 2px 0 black;
 }
 
 .scoreboard {
   width: 750px;
   display: flex;
   justify-content: space-evenly;
+}
+
+.container {
+  background-color: darkgray;
+  height: 750px;
+  width: 750px;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   margin: auto;
+  align-content: center;
+  row-gap: 40px;
+}
+
+.button {
+  cursor: pointer;
+  height: 300px;
+  width: 300px;
+}
+
+.circle {
+  position: absolute;
+  top: 400px;
+  cursor: pointer;
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+  background-color: white;
+  border: 20px solid darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.green {
+  background-color: green;
+  border-right: 4px solid #004c00;
+  border-bottom: 4px solid #004c00;
+  border-radius: 300px 20px 20px 20px;
+}
+
+.red {
+  background-color: red;
+  border-left: 4px solid #990000;
+  border-bottom: 4px solid #990000;
+  border-radius: 20px 300px 20px 20px;
+}
+
+.yellow {
+  background-color: yellow;
+  border-right: 4px solid #999900;
+  border-top: 4px solid #999900;
+  border-radius: 20px 20px 20px 300px;
+}
+
+.blue {
+  background-color: blue;
+  border-left: 4px solid #000099;
+  border-top: 4px solid #000099;
+  border-radius: 20px 20px 300px 20px;
 }
