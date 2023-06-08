@@ -34,7 +34,7 @@ h2 {
 
 .container {
   background-color: darkgray;
-  height: 750px;
+  height: 720px;
   width: 750px;
   border-radius: 20px;
   display: flex;
@@ -43,6 +43,7 @@ h2 {
   margin: auto;
   align-content: center;
   row-gap: 40px;
+  margin-bottom: 10px;
 }
 
 .button {
