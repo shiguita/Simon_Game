@@ -2,6 +2,10 @@
 const colors = ["green", "red", "yellow", "blue"];
 let highscore = 0;
 
+const msg = document.getElementById("msg");
+const background = document.querySelector("body");
+const points = document.getElementById("score");
+
 class GameAlgorithm {
   constructor() {
     this.sequence = [];
@@ -24,6 +28,7 @@ class GameAlgorithm {
 
   addToSequence() {
     this.seqIsPlaying = true;
+    msg.textContent = "MEMORIZE…";
     const newColor = colors[Math.floor(Math.random() * colors.length)];
     this.sequence.push(newColor);
     this.playSequence();
@@ -31,13 +36,15 @@ class GameAlgorithm {
 
   playSequence() {
     let myInterval = setInterval(() => {
-      // animacion
+      this.buttonAnimation(
+        this.buttons[colors.indexOf(this.sequence[this.indexOfSeq])]
+      );
       this.indexOfSeq++;
       if (this.indexOfSeq >= this.sequence.length) {
-        this.seqIsPlaying = false;
         this.indexOfSeq = 0;
+        this.seqIsPlaying = false;
+        msg.textContent = "YOUR TURN";
         clearInterval(myInterval);
-        // animacion
       }
     }, 800);
   }
@@ -45,6 +52,7 @@ class GameAlgorithm {
   buttonHandler(event) {
     if (this.isGameAlive && !this.seqIsPlaying) {
       const clickedColor = event.target.classList[1];
+      this.buttonAnimation(event.target);
       if (this.sequence[this.indexOfSeq] !== clickedColor) {
         this.endGame();
       } else {
@@ -60,7 +68,7 @@ class GameAlgorithm {
 
   updateScore() {
     this.score++;
-    document.getElementById("score").textContent = this.score;
+    points.textContent = this.score;
     if (this.score > highscore) {
       highscore = this.score;
       document.getElementById("best").textContent = highscore;
@@ -73,8 +81,17 @@ class GameAlgorithm {
   }
 
   endGame() {
-    // ANIMACION
+    msg.textContent = "TRY AGAIN?";
+    background.classList.add("errorBG");
     this.isGameAlive = false;
+    this.resetGame();
+  }
+
+  buttonAnimation(button) {
+    setTimeout(() => {
+      button.classList.remove(button.classList[1] + "Glow");
+    }, 300);
+    button.classList.add(button.classList[1] + "Glow");
   }
 }
 
@@ -82,9 +99,7 @@ const simonGame = new GameAlgorithm();
 document.querySelector(".circle").addEventListener("click", () => {
   if (!simonGame.isGameAlive) {
     simonGame.beginGame();
+    background.classList.remove("errorBG");
+    points.textContent = 0;
   }
 });
-// ANIMACIONES
-// - cambio de color en los botones al pulsarlos y cuando muestra la secuencia
-// - boton central (memoriza, te toca, etc.)
-// - cuando falla el jugador

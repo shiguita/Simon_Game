@@ -67,11 +67,25 @@ h2 {
   font-size: 20px;
 }
 
+.errorBG {
+  background-color: #e43838;
+}
+
 .green {
   background-color: green;
   border-right: 4px solid #004c00;
   border-bottom: 4px solid #004c00;
   border-radius: 300px 20px 20px 20px;
+}
+
+.greenGlow {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    rgba(185, 251, 177, 1) 5%,
+    rgba(26, 173, 53, 1) 73%
+  );
+  box-shadow: 2px 2px 20px 10px #50af44;
 }
 
 .red {
@@ -81,6 +95,16 @@ h2 {
   border-radius: 20px 300px 20px 20px;
 }
 
+.redGlow {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 44, 44, 1) 6%,
+    rgb(188, 0, 41) 99%
+  );
+  box-shadow: 2px 2px 20px 10px #e43838;
+}
+
 .yellow {
   background-color: yellow;
   border-right: 4px solid #999900;
@@ -88,9 +112,29 @@ h2 {
   border-radius: 20px 20px 20px 300px;
 }
 
+.yellowGlow {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    rgb(252, 255, 100) 6%,
+    rgb(231, 235, 0) 99%
+  );
+  box-shadow: 2px 2px 20px 10px #ebe56b;
+}
+
 .blue {
   background-color: blue;
   border-left: 4px solid #000099;
   border-top: 4px solid #000099;
   border-radius: 20px 20px 300px 20px;
+}
+
+.blueGlow {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    rgba(99, 195, 255, 1) 6%,
+    rgba(76, 93, 255, 1) 99%
+  );
+  box-shadow: 2px 2px 20px 10px #348be2;
 }
