@@ -82,8 +82,8 @@ h2 {
   border: 0;
   background: radial-gradient(
     circle,
-    rgba(185, 251, 177, 1) 5%,
-    rgba(26, 173, 53, 1) 73%
+    rgb(49, 213, 31) 5%,
+    rgb(30, 167, 55) 73%
   );
   box-shadow: 2px 2px 20px 10px #50af44;
 }
@@ -99,8 +99,8 @@ h2 {
   border: 0;
   background: radial-gradient(
     circle,
-    rgba(255, 44, 44, 1) 6%,
-    rgb(188, 0, 41) 99%
+    rgb(255, 71, 71) 6%,
+    rgb(255, 19, 70) 99%
   );
   box-shadow: 2px 2px 20px 10px #e43838;
 }
@@ -134,7 +134,7 @@ h2 {
   background: radial-gradient(
     circle,
     rgba(99, 195, 255, 1) 6%,
-    rgba(76, 93, 255, 1) 99%
+    rgb(113, 127, 255) 99%
   );
   box-shadow: 2px 2px 20px 10px #348be2;
 }

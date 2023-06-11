@@ -28,10 +28,12 @@ class GameAlgorithm {
 
   addToSequence() {
     this.seqIsPlaying = true;
-    msg.textContent = "MEMORIZE…";
     const newColor = colors[Math.floor(Math.random() * colors.length)];
     this.sequence.push(newColor);
-    this.playSequence();
+    setTimeout(() => {
+      msg.textContent = "MEMORIZE…";
+      this.playSequence();
+    }, 300);
   }
 
   playSequence() {
@@ -42,8 +44,10 @@ class GameAlgorithm {
       this.indexOfSeq++;
       if (this.indexOfSeq >= this.sequence.length) {
         this.indexOfSeq = 0;
-        this.seqIsPlaying = false;
-        msg.textContent = "YOUR TURN";
+        setTimeout(() => {
+          this.seqIsPlaying = false;
+          msg.textContent = "YOUR TURN";
+        }, 400);
         clearInterval(myInterval);
       }
     }, 800);
@@ -88,10 +92,10 @@ class GameAlgorithm {
   }
 
   buttonAnimation(button) {
+    button.classList.add(button.classList[1] + "Glow");
     setTimeout(() => {
       button.classList.remove(button.classList[1] + "Glow");
     }, 300);
-    button.classList.add(button.classList[1] + "Glow");
   }
 }
 
